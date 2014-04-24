@@ -50,17 +50,23 @@ end
 
 # Person 4
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
+	source.each do |x| 
+		if x.include? thing_to_delete
+			source.delete(x)
+		end
+  	end
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
+	puts source
+  	source.delete(thing_to_delete)
+  	puts source
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+# .delete will remove an element of an array or hash.  This will remove the
+# element directly from the array or hash and shift the next into its place
+# in the index.
 
 
 ################## DRIVER CODE ###################################
