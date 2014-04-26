@@ -19,13 +19,13 @@ def group(students)
 	num_group = (students.length / 4)
 	group_size = num_group
 	counter = num_group - 1
-	display = 0
-	z=0
-	x=0
-	y=0
+	z = 0
+	x = 0
+	y = 0
 	unit = Hash.new
 	3.times do
-		while group_size!= 0 
+		students.shuffle!
+		while group_size != 0 
 			counter.times do
  				unit[[x, y]] = students[z]
 			 	z += 1
@@ -40,11 +40,13 @@ def group(students)
  			overflow -= 1
  			z += 1
  		end
- 		puts unit
- 		x = 0
- 		z = 0
- 		y = 0
- 		students.shuffle!
+ 	return unit
+ 	overflow = (students.length % 4)
+	num_group = (students.length / 4)
+	group_size = num_group
+	z = 0
+	x = 0
+	y = 0
  	end
 end
 
@@ -52,16 +54,48 @@ group(studentArray)
 
 # 4. Refactored Solution
 
-
+def group(students)
+	overflow = (students.length % 4)
+	num_group = (students.length / 4)
+	group_size = num_group
+	counter = num_group - 1
+	x, y, z = 0, 0, 0
+	unit = Hash.new
+	3.times do
+		students.shuffle!
+		while group_size != 0 
+			counter.times do
+ 				unit[[x, y]] = students[z]
+			 	z += 1
+			 	y += 1
+			end
+ 			group_size -= 1 
+ 			x += 1
+ 			y = 0
+ 		end
+ 		while overflow != 0
+ 			unit[[overflow, (num_group - 1)]] = students[z]
+ 			overflow -= 1
+ 			z += 1
+ 		end
+ 	return unit
+ 	overflow = (students.length % 4)
+	num_group = (students.length / 4)
+	group_size = num_group
+	x, y, z = 0, 0, 0
+ 	end
+end
 
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
-
+puts "Everyone is accounted for?" + " " + ( group(studentArray).length == studentArray.length ).to_s 
+puts "And everyone is in random groups?" + " " + ( group(studentArray) != group(studentArray) ).to_s
 
 
 
 
 # 5. Reflection 
 
-
+# I'm really missing something here.  I know I am repeating myself terribly with this code, but I feel like I just don't have
+# have enough time to research!  It works though...  I will continue to try and refactor it.  And test code is the worst.

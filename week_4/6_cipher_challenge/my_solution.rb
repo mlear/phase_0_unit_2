@@ -80,7 +80,7 @@ end # THE END
 def north_korean_cipher(coded_message)
     input = coded_message.downcase.split("")
     decoded_sentence = []
-    alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    alpha = ("a".."z").to_a
     input.each do |x|
       if alpha.include?(x)
         cipher_index = alpha.index(x) - 4
@@ -135,4 +135,7 @@ p north_korean_cipher("ger^wsqifshc*nywx^kix^qi&10000*fekw@sj$gssp%vergl@hsvmxsw
      p "Error: Cipher should equal \'can somebody just get me 100 bags of cool ranch doritos?\'"
  end
 # Reflection
- 
+# This took a little bit of time, but was well worth it.  I felt going into this that I was really behind on ruby since we
+# had first learned it weeks back.. but I was much more comfortable after this exercise.  On another note, Celeen is a 
+# great person to pair with, she has so much enthusiam and energy, not to mention she knows what the heck that she is doing!
+# Great humerous exercise here.

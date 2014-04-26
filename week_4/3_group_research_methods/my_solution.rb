@@ -83,7 +83,7 @@ p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie
 
 # Reflect!
 # 
-# 
-# 
+# I liked the research aspect of this.  Having a challenge and finding out the way to fix it really appeals to me.
+# I plan on joining everything together once i see the other pieces of code to make sure my code runs flawlessly.
 # 
 # 
