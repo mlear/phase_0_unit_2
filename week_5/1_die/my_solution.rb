@@ -18,18 +18,16 @@
 
 class Die
   def initialize(sides)
-    unless sides >= 3
-        raise ArgumentError.new("This is dice.. not paper.")
-    end
-    @@sides = sides
+    raise ArgumentError.new("This is dice.. not paper.") unless sides >= 3
+    @sides = sides
   end
   
   def sides
-    return @@sides
+    return @sides
   end
   
   def roll
-    return rand(@@sides) + 1
+    return rand(@sides) + 1
   end
 end
 

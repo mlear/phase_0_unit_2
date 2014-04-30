@@ -17,18 +17,16 @@
 
 class Die
   def initialize(labels)
-  		unless !labels.empty?
-  			raise ArgumentError.new("Fill 'er up.")
-  		end
-  		@@labels = labels
+  		raise ArgumentError.new("Fill 'er up.") unless !labels.empty?
+  		@labels = labels
   end
 
   def sides
-  	return @@labels.length
+  	return @labels.length
   end
 
   def roll
-  	return @@labels.sample
+  	return @labels.sample
   end
 end
 
