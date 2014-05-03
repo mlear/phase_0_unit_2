@@ -1,6 +1,10 @@
 #population density is number of people per square mile as of 2012
 #this data is updated every year with estimates from a 10 year census 
 
+# this hash is composed of a key and another hash for the keys value.  It allows for additional keys and values to be added
+# to a single key.  The first hash is using a string to create the key.  The second hash that is being used to create the value
+# is using a different syntax, and the keys are actually being created as symbols and not strings.  This should save on memory usuage.
+
 
 STATE_DATA = {  "Alabama" => {population_density: 94.65, population: 4822023, region: 5, regional_spread: 3},
                 "Alaska" => {population_density: 1.1111, population: 731449, region: 10, regional_spread: 9},

@@ -48,15 +48,39 @@ end
 # 4. Refactored Solution
 
 
-# I feel like we should be able to do something about that while loop, but can't think of anything right now.
+class CreditCard
+
+  def initialize(card)
+    @card = card.to_s.chars.map(&:to_i)
+    
+    raise ArgumentError.new ("Invalid input, not enough numbers!") unless @card.length == 16
+    
+  end
+  
+  def check_card
+    i = @card.length - 2
+
+    while i >= 0
+      @card[i] *= 2 
+      i -= 2
+    end
+
+    @card = @card.join.to_s.chars.map(&:to_i)
+                                  
+    @card.reduce(:+) % 10 == 0 ? true : false
+  end
+end
 
 
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
+# Lienha came up with these.. but I'm not sure why they are necessary as the rspec file is already taking care of it.
 
-
-
+card = CreditCard.new(4408041234567893)
+p card.check_card == true
+another_card = CreditCard.new(4408041234567892)
+p another_card.check_card == false
 
 
 # 5. Reflection 
