@@ -3,43 +3,44 @@ Define the following commands and describe how they work/what they do.
 
 
 #### add
-<!-- Your defnition here -->
+<!-- This will add a file to the commit -->
 
 #### branch
-<!-- Your defnition here -->
+<!-- branch will tell you what local branchs are available to you, if you follow this with a new name, you can create a new branch -->
 
 #### checkout
-<!-- Your defnition here -->
+<!-- this will switch you to a branch that you want -->
 
 #### clone
-<!-- Your defnition here -->
+<!-- this will copy a file/project for you to work on in your local repo -->
 
 #### commit
-<!-- Your defnition here -->
+<!-- this will "commit" all of the contect that you have added and save it.  This will give you a fresh slate for new changes to be made -->
 
 #### fetch
-<!-- Your defnition here -->
+<!-- this will sync changes from a cloned repo to update you local repo.  It will tell you what changed and allow you to then merge, move them to other branchs, and other things that I am not totaly up to par on yet. -->
 
 #### log
-<!-- Your defnition here -->
+<!-- this will display all changes made to file, in chronological order.  It will tell you the auther, what got changed, and the auther.   -->
 
 #### merge
-<!-- Your defnition here -->
+<!-- this will merge you current branch with another. -->
 
 #### pull
-<!-- Your defnition here -->
+<!-- This comines the fetch and merge command -->
 
 #### push
-<!-- Your defnition here -->
+<!-- this will push any local changes to a remote repo -->
 
 #### reset
-<!-- Your defnition here -->
+<!-- this can do three things, it can reset the staging area, it can undo a commit and put them back to the stadged status, or it can completely undo a commit and reset the working directory back to what it was prior to the last commit.  -->
 
 #### rm
-<!-- Your defnition here -->
+<!-- this will remove a staged file from the next commit WITHOUT resetting the file. -->
 
 #### status
 
+<!-- this will tell you the status of you staging area and what changes need to be committed. -->
 
 ## Release 4: Git Workflow
 
@@ -48,3 +49,5 @@ Define the following commands and describe how they work/what they do.
 - Commit locally
 
 ## Release 5: Reflection
+
+<!-- This was an interesting challenge to have and I will try to just use the command line moving forward.  I have been using the github app, and while convenient, it doesn't feel like you have the same control as you do through the command line.  I found a usefull resource at gitref.org/basic that I will certainly going back to.
