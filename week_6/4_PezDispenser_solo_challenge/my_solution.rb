@@ -16,14 +16,42 @@
 
 # 2. Pseudocode
 
+# 1.) create a class titled "PezDispenser" and have an intialize function that accepts an
+#   array of strings representing flavors.
+#
+# 2.) create an instance method that allows to count the elements that are in the array
+#
+# 3.) create an instance method that will decrease the array by one
+#
+# 4.) create an instance method that will add an element to the array
+#
+# 5.) create an instance method that will display the contents of the array.
 
 
 # 3. Initial Solution
 
 class PezDispenser
  
-# your code here!
- 
+  def initialize(pez)
+    @pez = pez
+  end
+  
+  def pez_count
+    @pez.size
+  end
+  
+  def add_pez(color)
+    @pez.push(color)
+  end
+  
+  def get_pez
+    @pez.pop
+  end
+  
+  def see_all_pez
+    @pez.cycle(1) { |pez| puts pez }
+  end
+
 end
  
 
@@ -31,7 +59,8 @@ end
 # 4. Refactored Solution
 
 
-
+# I don't think I can reactor much here, all the methods are one line and describe
+# whats going on in them, I think we are good to go.
 
 
 
@@ -49,7 +78,16 @@ puts "Oh, you want one do you?"
 puts "The pez flavor you got is: #{super_mario.get_pez}"
 puts "Now you have #{super_mario.pez_count} pez!"
 
+def assert
+  raise "Assertion failed" unless yield
+end
 
+assert{ super_mario.pez_count == 9 }
+assert{ super_mario != nil}
 
 
 # 5. Reflection 
+
+# I'm glad we are getting in all of this class work with ruby, I am becomming very comfortable
+# with it, and fell like the bulk of coding with ruby revolves around using classes.  Now that
+# I have said that though, watch all of my assumptions come crashing down!  Nothing here really #  through me for a loop.
