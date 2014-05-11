@@ -13,7 +13,7 @@
 # => define 2 more methods, one to check whether an integer is equal to the answer, and one that returns the ultimate result if the guess was correct.
 
 # 3. Initial Solution
-
+=begin
 class GuessingGame
   def initialize(answer)
 	@answer = answer
@@ -33,21 +33,52 @@ class GuessingGame
     @guess == @answer ? true : false
   end
 end
-
+=end
 
 
 
 # 4. Refactored Solution
 
 
-# still trying to refactor what I have already, there may be a better way to do that if conditional in the guess method
+class GuessingGame
+
+  def initialize(answer)
+    @answer = answer
+    @solved = false
+  end
+
+  def guess(guess)
+    if guess == @answer
+      @solved = true
+      return :correct      
+    elsif guess < @answer
+      return :low
+    else
+      return :high
+    end
+  end
+
+  def solved?
+    @solved
+  end
+
+end
 
 
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
 
-# still trying to figure out what to do here as there were tests provided to us.
+game = GuessingGame.new(9)
+
+p game.guess(7) == :low
+p game.guess(10) == :high
+
+p game.solved? == false
+
+p game.guess(9) == :correct
+
+p game.solved? == true
 
 
 
